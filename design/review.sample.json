@@ -1,0 +1,33 @@
+{
+  "demo": true,
+  "disclosure": "بيانات توضيحية",
+  "review": {
+    "id": "review-demo-login",
+    "name": "مراجعة تسجيل الدخول",
+    "createdAt": "2026-11-23T12:00:00+03:00",
+    "status": "complete",
+    "selectedFiles": ["login.js", "validators.js", "login.test.js"],
+    "inputRequirements": [
+      "قبول بريد صالح",
+      "رفض الحقول الفارغة",
+      "طول كلمة المرور",
+      "رفض بريد غير صالح",
+      "رسالة خطأ واضحة",
+      "نجاح تسجيل الدخول على الخادم"
+    ],
+    "results": [
+      {"id": "r1", "order": 1, "requirement": "قبول بريد صالح", "status": "appears_met", "explanation": "يظهر في الملفات المختارة مسار لقبول البريد الصالح، دون التحقق بالتنفيذ.", "evidence": {"file": "validators.js", "lineStart": 12, "lineEnd": 15, "snippet": "function isValidEmail(email) {\n  if (!email) return false;\n  return email.includes(\"@\");\n}", "isIllustrative": true}},
+      {"id": "r2", "order": 2, "requirement": "رفض الحقول الفارغة", "status": "appears_met", "explanation": "توجد حراسة للحقول الفارغة في المثال المقروء؛ لم يُختبر السلوك فعليًا.", "evidence": {"file": "login.js", "lineStart": 21, "lineEnd": 21, "snippet": "if (!email || !password) return showError(\"أكمل الحقول\");", "isIllustrative": true}},
+      {"id": "r3", "order": 3, "requirement": "طول كلمة المرور", "status": "appears_met", "explanation": "يظهر شرط طول كلمة المرور في المثال، دون تشغيله.", "evidence": {"file": "validators.js", "lineStart": 8, "lineEnd": 8, "snippet": "return password.length >= 8;", "isIllustrative": true}},
+      {"id": "r4", "order": 4, "requirement": "رفض بريد غير صالح", "status": "needs_review", "explanation": "وجود @ وحده لا يكفي للتحقق من البريد.", "manualNextStep": "راجع الحالات غير الصالحة التي يقبلها هذا الشرط، وحدد سياسة التحقق المناسبة للمتطلب.", "evidence": {"file": "validators.js", "lineStart": 14, "lineEnd": 14, "snippet": "return email.includes(\"@\");", "isIllustrative": true}},
+      {"id": "r5", "order": 5, "requirement": "رسالة خطأ واضحة", "status": "needs_review", "explanation": "رسالة الخطأ في المثال عامة ولا تشرح سبب الرفض.", "manualNextStep": "حدد الرسالة المناسبة لكل حالة رفض وراجع وضوحها للمستخدم.", "evidence": {"file": "login.js", "lineStart": 23, "lineEnd": 23, "snippet": "return showError(\"حدث خطأ\");", "isIllustrative": true}},
+      {"id": "r6", "order": 6, "requirement": "نجاح تسجيل الدخول على الخادم", "status": "unverifiable", "explanation": "الخادم خارج الملفات المختارة، ولم يُنفّذ الكود أو الاختبارات.", "manualNextStep": "يتطلب ذلك تحققًا منفصلًا من الخادم وسلوك التشغيل، خارج نطاق هذه المراجعة.", "evidence": null}
+    ],
+    "limits": ["لم يُشغّل الكود أو الاختبارات", "لا يضمن الفحص خلو الكود من الأخطاء"],
+    "initialSelectedRequirementId": "r4",
+    "mobileAttentionOrder": ["r4", "r5", "r6"],
+    "allResultsOrder": ["r1", "r2", "r3", "r4", "r5", "r6"]
+  },
+  "statusLabels": {"appears_met": "يبدو مستوفًى", "needs_review": "يحتاج مراجعة", "unverifiable": "لا يمكن التحقق منه"},
+  "note": "كل الأدلة وأرقام الأسطر أمثلة مصطنعة لتصميم التقرير؛ ليست نتائج فحص ملفات المستودع، ولا تحليلا لملفات يختارها المستخدم لاحقًا."
+}
