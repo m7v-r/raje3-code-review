@@ -1,58 +1,22 @@
-/*
-  tokens.css: the ONLY place colours, fonts, sizes and spacing are defined.
-  Every other file uses var(--...). No hex values anywhere else.
-
-  These values are neutral greys ON PURPOSE: the starter is a wireframe, not a design.
-  Your look comes from YOUR DESIGN.md. When you (or the agent) copy the tokens from
-  DESIGN.md into this file, also delete the --starter-banner line below:
-  the grey "هذا هيكل" banner disappears, and that is how you know the tokens are yours.
-*/
 :root {
-  --starter-banner: block; /* DELETE this line once the tokens come from DESIGN.md */
-
-  /* Colours: 5-6 named roles. One dominant, one accent. */
-  --color-bg: #f2f2f2;
-  --color-surface: #ffffff;
-  --color-ink: #1c1c1c;
-  --color-muted: #666666;
-  --color-primary: #333333;
-  --color-accent: #888888;
-  --color-line: #d4d4d4;
-  --color-danger: #9a2a2a;
-
-  /* Type: a display font and a body font. The body font must support Arabic.
-     Default body: Noto Sans Arabic (alternatives: Tajawal, Cairo, Readex Pro, Almarai).
-     Before you switch, type «حتى» and «على» in the new font: some fonts draw «حتى» like «حق». */
-  --font-display: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
-  --font-body: 'Noto Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
-  --text-h1: 32px;
-  --text-h2: 22px;
-  --text-body: 16px;
-  --text-caption: 13px;
-  --weight-regular: 400;
-  --weight-bold: 700;
-  --leading-tight: 1.35;
-  --leading-body: 1.75;
-
-  /* Spacing scale: use only these steps. */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 24px;
-  --space-6: 32px;
-  --space-7: 48px;
-
-  /* Shape */
-  --radius: 8px;
-  --border-width: 1px;
-  --shadow: none;
-
-  /* Layout */
-  --tap: 44px;          /* minimum touch target */
-  --content-max: 1120px;
-
-  /* Motion */
-  --dur-fast: 150ms;
-  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  color-scheme: dark;
+  --color-bg:#060E1C; --color-surface:#0B1830; --color-surface-raised:#112947;
+  --color-ink:#ECF4FF; --color-muted:#B4C5E3;
+  --color-primary:#72B8FF; --color-primary-hover:#9ACFFF; --color-primary-pressed:#4BA1F5; --color-primary-ink:#061427;
+  --color-accent:#8CB8FF; --color-focus:#A6CFFF; --color-line:#244266; --color-control-border:#5F85B2;
+  --color-selected:#12345B; --color-warning:#FFD187; --color-success:#70DCAE; --color-unknown:#B4C5E3;
+  --color-danger:#FF9FB6; --color-evidence-line:#17334D; --color-disabled-bg:#172B44; --color-disabled-ink:#91A8C7;
+  --color-code-bg:#040A14; --color-chrome:#09182E; --color-blue-tint:#0B2442;
+  --shadow-panel:0 16px 48px rgb(0 5 16 / .2); --shadow-active:0 0 24px rgb(63 149 255 / .16);
+  --font-body:'Noto Sans Arabic',Tahoma,sans-serif; --font-code:'IBM Plex Mono',monospace;
+  --text-h1:1.75rem; --text-h1-desktop:2rem; --text-h2:1.375rem; --text-h3:1.125rem;
+  --text-body:1rem; --text-caption:.875rem; --text-code:.875rem;
+  --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-5:1.5rem; --space-6:2rem; --space-7:3rem;
+  --radius:.25rem; --radius-small:.125rem; --border:1px; --focus-width:3px; --focus-offset:2px;
+  --tap:2.75rem; --row-min:3.5rem; --content-max:90rem; --manifest-width:13.5rem; --requirements-width:20rem;
+  --icon:1.25rem; --icon-small:1rem; --brand-size:2rem; --code-preview-min:15rem; --textarea-height:12.5rem;
+  --start-form-min:28rem; --start-preview-min:20rem; --scope-min:18rem; --code-number-width:3rem;
+  --header-min:5.5rem; --preview-logo:3rem; --duration-fast:120ms; --duration-normal:180ms; --duration-view:240ms;
+  --easing:cubic-bezier(.2,.8,.2,1); --weight-normal:400; --weight-semibold:600; --weight-bold:700;
 }
+

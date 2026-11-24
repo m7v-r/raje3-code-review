@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-24",
+  "app": "web/ Vite + React",
+  "origin": "http://127.0.0.1:5173",
+  "reloadRestored": {
+    "name": "اختبار الحفظ بعد إعادة التحميل",
+    "requirements": "متطلب جديد محفوظ في المتصفح\nرفض الحقول الفارغة",
+    "files": [
+      "login.js",
+      "validators.js"
+    ]
+  },
+  "viewportWidths": {
+    "320": 320,
+    "375": 375,
+    "1280": 1280
+  },
+  "checks": {
+    "customInputsDoNotReceiveCannedReport": true,
+    "mobileAllResultsCount": 6,
+    "unknownResultHasNoInventedCode": true,
+    "focusMode": true,
+    "emptyFileFilterClearsEvidence": true
+  },
+  "screenshots": [
+    "draft-persistence-375.jpg",
+    "draft-persistence-1280.jpg",
+    "report-react-1280.jpg"
+  ]
+}

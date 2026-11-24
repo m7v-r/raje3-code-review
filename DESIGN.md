@@ -1,7 +1,7 @@
 # DESIGN.md — راجع / مختبر الكود
 
 Direction selected by the user: «اعجبني مختبر الكود» (23 November 2026).
-Approved midnight-blue direction and interactive preview. On 24 November 2026 the user approved uploading this design work to the Raje3 GitHub project. This does not claim completion of the React implementation or a live analysis backend.
+Approved midnight-blue direction and interactive preview. The user then requested working browser persistence in the main application. The approved interface now runs in web/ with local review-draft storage; no live analysis backend was added.
 
 ## 1. Direction
 - Name: مختبر الكود / Code Lab.
@@ -9,14 +9,14 @@ Approved midnight-blue direction and interactive preview. On 24 November 2026 th
 - Adjectives: focused, legible, precise.
 - Primary reference: GitHub file/line review, https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request . Borrow evidence context only; omit merge, approval, diffs and editing.
 - Approved interactive reference: `design/mockups/raje3-code-lab.html`; editable source: `design/prototype/`; handoff: `design/CODEX-HANDOFF.md`.
-- This specification and the current interactive preview supersede the older exploration boards. Actual 375px/1280px viewport screenshots have not been captured; browser visual QA remains pending.
+- This specification and the interactive preview supersede the older exploration boards. React viewport evidence and browser checks are in design/shots/; local-storage behavior and manual checks are in web/LOCAL_STORAGE.md.
 ### This design never does
 - No gradients, decorative terminal logs, emoji icons, fake scores, confetti, or three identical summary cards.
 - No Inter, Roboto, Arial or Space Grotesk. No centered body paragraphs or Arabic letter-spacing.
 - No code edits, auto-fixes, execution, whole-repository imports, merge/approval controls, or claims of guaranteed correctness.
 
 ## 2. Colors
-For the prototype, tokens live in `design/prototype/tokens.css`. When implementing React, mirror these in `web/src/tokens.css`; other styles reference tokens. Opaque text colors only.
+React tokens are in `web/src/tokens.css`, mirrored from the approved prototype in `design/prototype/tokens.css`; other styles reference tokens. Opaque text colors only.
 | Token | Hex | Role |
 |---|---|---|
 | `--color-bg` | `#060E1C` | Page, dark blue dominant |
@@ -135,6 +135,7 @@ For the prototype, tokens live in `design/prototype/tokens.css`. When implementi
 
 ## 9. Verification boundary
 - Numerical contrast checks apply to specified token pairs only; final font loading, focus, reflow and rendered contrast still require verification.
-- Check actual viewport screenshots at 375px and 1280px against the approved preview/spec when browser QA is available. The generated boards are not viewport screenshots.
-- JavaScript syntax, event-driven state/interaction checks and token-contrast calculations passed. No live backend analysis, file execution or rendered-browser validation was performed.
+- React was checked in the browser at 320px, 375px and 1280px, including reload persistence and the report journey. Viewport evidence is in design/shots/. This is not a comprehensive accessibility audit.
+- Storage tests and production build passed. No live backend analysis or user-file execution was performed. Only the draft name, requirement text and filename metadata persist in localStorage behind one adapter.
 - Languages, file limits, real analysis service and retention policies remain product questions; do not silently decide them during frontend styling.
+
