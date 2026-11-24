@@ -18,8 +18,8 @@ export function Footer({ onAbout }) {
 export function Dialogs({ aboutRef, shortcutsRef }) {
   return <>
     <dialog id="about-dialog" ref={aboutRef} aria-labelledby="about-heading"><div className="dialog-head"><h2 id="about-heading">جرّب التصميم، وافهم الرحلة</h2><button type="button" className="icon-button" aria-label="إغلاق" onClick={() => aboutRef.current.close()}><Icon name="close" /></button></div>
-      <p>هذه الواجهة الأساسية لراجع. تحفظ مسودة المراجعة في هذا المتصفح، بينما التقرير الحالي يخص مثال تسجيل الدخول الجاهز ولا يمثل تحليلًا فعليًا لملفاتك.</p>
-      <p>تُحفظ أسماء الملفات فقط؛ لا تُقرأ محتوياتها ولا تُرفع إلى خادم. لا يُشغّل الكود أو الاختبارات.</p><button type="button" className="primary" onClick={() => aboutRef.current.close()}>فهمت</button>
+      <p>هذه الواجهة الأساسية لراجع. تحفظ مسودة المراجعة في حسابك، بينما التقرير الحالي يخص مثال تسجيل الدخول الجاهز ولا يمثل تحليلًا فعليًا لملفاتك.</p>
+      <p>يُحفظ الاسم والمتطلبات وأسماء الملفات فقط؛ لا تُقرأ محتويات الملفات ولا تُرفع. لا يُشغّل الكود أو الاختبارات.</p><button type="button" className="primary" onClick={() => aboutRef.current.close()}>فهمت</button>
     </dialog>
     <dialog id="shortcuts-dialog" ref={shortcutsRef} aria-labelledby="shortcuts-heading"><div className="dialog-head"><h2 id="shortcuts-heading">اختصارات تختصر الطريق</h2><button type="button" className="icon-button" aria-label="إغلاق الاختصارات" onClick={() => shortcutsRef.current.close()}><Icon name="close" /></button></div>
       <dl className="shortcut-list">{[
